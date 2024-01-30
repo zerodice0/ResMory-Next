@@ -9,7 +9,7 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      MENU_REVIEWS: {
+      menu_review: {
         Row: {
           created_at: string
           id: number
@@ -36,22 +36,22 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: "MENU_REVIEWS_store_id_fkey"
+            foreignKeyName: "menu_review_store_id_fkey"
             columns: ["store_id"]
             isOneToOne: false
-            referencedRelation: "STORE"
+            referencedRelation: "store"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "MENU_REVIEWS_user_id_fkey"
+            foreignKeyName: "menu_review_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "USER"
+            referencedRelation: "user"
             referencedColumns: ["id"]
           }
         ]
       }
-      STORE: {
+      store: {
         Row: {
           created_at: string
           description: string | null
@@ -72,7 +72,7 @@ export interface Database {
         }
         Relationships: []
       }
-      STORE_REVIEWS: {
+      store_review: {
         Row: {
           created_at: string
           id: number
@@ -99,22 +99,22 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: "STORE_REVIEWS_store_id_fkey"
+            foreignKeyName: "store_review_store_id_fkey"
             columns: ["store_id"]
             isOneToOne: false
-            referencedRelation: "STORE"
+            referencedRelation: "store"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "STORE_REVIEWS_user_id_fkey"
+            foreignKeyName: "store_review_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "USER"
+            referencedRelation: "user"
             referencedColumns: ["id"]
           }
         ]
       }
-      USER: {
+      user: {
         Row: {
           created_at: string
           id: number
