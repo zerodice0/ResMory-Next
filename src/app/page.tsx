@@ -1,7 +1,6 @@
 "use client"
 
 import { KonstaProvider, Button } from "konsta/react";
-import Image from "next/image";
 
 export default function Home() {
   return (
