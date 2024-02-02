@@ -1,18 +1,14 @@
-import supabase from '../module/supabase';
-import WritePost from '../components/write_review/write_review';
+"use client"
 
-const test = async () => {
-  const {data, error} = await supabase
-  .from('store')
-  .select();
+import { KonstaProvider, Button } from "konsta/react";
+import Image from "next/image";
 
-  return data;
-}
-
-export default function Page() {
-  test();
-  
+export default function Home() {
   return (
-    <WritePost></WritePost>
-  )
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <KonstaProvider theme="ios">
+        <Button>Hello</Button>
+      </KonstaProvider>
+    </main>
+  );
 }
