@@ -1,18 +1,26 @@
-import { createClient } from '@supabase/supabase-js';
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
+import type { PropsWithChildren } from "react";
 
-interface RootLayoutProps {
-  children: React.ReactNode
+const firebaseConfig = {
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messaginSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  const supabase = createClient(supabaseUrl, supabaseKey);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
+const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
   );
 }
+
+export default RootLayout;
