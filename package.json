@@ -1,17 +1,13 @@
 {
-  "name": "resmory-next",
-  "version": "0.0.1",
-  "description": "resmory project",
-  "main": "index.js",
+  "name": "resmory_next",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "test",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "author": "zeroidce0",
-  "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.8",
     "firebase": "^10.8.0",
